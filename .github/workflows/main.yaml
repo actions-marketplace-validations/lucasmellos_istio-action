@@ -1,0 +1,14 @@
+on: [push]
+  
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: A job to install a custom istio
+    steps:
+      - uses: actions/checkout@v3
+      - uses: lucasmellos/istio-action@main
+        with:
+          istio_version: "1.13.3"
+          custom_file: "my-config.yaml"
+        env:
+          kubeconfig: ${{ secrets.KUBECONFIG }}
