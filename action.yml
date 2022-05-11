@@ -1,0 +1,37 @@
+name: 'Istioctl Custom Operator Setup'
+description: 'Greet someone'
+inputs:
+  istio_version: 
+    description: 'Istio Version'
+    required: true
+    default: '1.13.3'
+  target_arch: 
+    description: 'Target System arch'
+    required: false
+    default: 'x86_64'
+  custom_file: 
+    description: 'Custom YAML file name'
+    required: true
+    default: 'custom.yaml'
+  kubectl_version:
+    description: 'Kubectl version required to interact with k8s cluster'
+    required: false
+    default: 'latest'
+  namespace:
+    default: istio-system
+    description: 'Target Istio namespace'
+    required: false
+runs:
+  using: "composite"
+  steps:
+    - run: curl -L https://istio.io/downloadIstio | ISTIO_VERSION=${{ inputs.istio_version }} TARGET_ARCH=${{ inputs.target_arch}} sh -
+      shell: bash
+    - run: echo "$PWD/istio-${{ inputs.istio_version }}/bin" >> $GITHUB_PATH
+      shell: bash   
+    - uses: azure/setup-kubectl@v2.0
+      with:
+        version: ${{ inputs.kubectl_version }}   
+    - run: echo "$kubeconfig" > kubeconfig.yaml
+      shell: bash 
+    - run: istioctl install -y -f ${{ inputs.custom_file }} -c kubeconfig.yaml -n ${{ inputs.namespace }}
+      shell: bash
