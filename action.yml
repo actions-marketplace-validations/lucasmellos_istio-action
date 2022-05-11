@@ -1,6 +1,6 @@
 name: 'Istioctl Custom Operator Setup'
 description: 'Istio Custom Operator setup for K8S environments'
-banding:
+branding:
   icon: 'upload-cloud'
   color: 'white'
 inputs:
