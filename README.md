@@ -1,6 +1,6 @@
 # Istio on K8S
 
-This action automates Istio installation using istioctl for Kubernetes based environment. It allows you to create custom config files and deploy it on Kubernetes by providing support multiple kubernetes version providing a custom kubectl input version.
+This action automates Istio installation using istioctl for Kubernetes based environment. It allows you to create custom config files and deploy it on Kubernetes. Also it has extended kubectl support providing an input that allows you to pick a specific kubectl version that matches with your Kubernetes cluster.
 
 ## Inputs
 | Input                 | Description                                                         | Default      | Required    |
