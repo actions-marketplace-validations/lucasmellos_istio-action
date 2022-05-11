@@ -16,7 +16,7 @@ This action automates Istio installation using istioctl for Kubernetes based env
 |-----------------------|---------------------------------------------------------------------|--------------|-------------|
 | ```kubeconfig```   | Kubeconfig file that connects to the k8s cluster                      |        | ```true```  |
 
-A Kubeconfig file must be stores as secret in your repo or your organization and you must reference in your Workflow. You can find more about how to store encrypted secrets on [GitHub Docs Here](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository).
+A Kubeconfig file must be stored as secret in your repo or in your organization and you must reference in your Workflow. You can find more about how to store encrypted secrets on [GitHub Docs Here](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository).
 
 ## Example
 
