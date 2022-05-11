@@ -1,5 +1,7 @@
 name: 'Istioctl Custom Operator Setup'
-description: 'Greet someone'
+description: 'Istio Custom Operator setup for K8S environments'
+banding:
+  icon: upload-cloud
 inputs:
   istio_version: 
     description: 'Istio Version'
