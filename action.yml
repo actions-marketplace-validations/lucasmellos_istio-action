@@ -1,4 +1,4 @@
-name: 'Istioctl Custom Operator Setup'
+name: 'Istio Custom Operator Setup'
 description: 'Istio Custom Operator setup for K8S environments'
 branding:
   icon: 'upload-cloud'
